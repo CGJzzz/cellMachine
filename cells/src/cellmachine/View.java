@@ -15,6 +15,7 @@ public class View extends JPanel {
 		theField = field;
 	}
 
+	//jvm会自动调用paint
 	@Override
 	public void paint(Graphics g) {
 		super.paint(g);
@@ -22,7 +23,7 @@ public class View extends JPanel {
 			for ( int col = 0; col<theField.getWidth(); col++ ) {
 				Cell cell = theField.get(row, col);
 				if ( cell != null ) {
-					cell.draw(g, col*GRID_SIZE, row*GRID_SIZE, GRID_SIZE);
+					cell.draw(g, col*GRID_SIZE, row*GRID_SIZE+1, GRID_SIZE+1);
 				}
 			}
 		}
@@ -30,7 +31,7 @@ public class View extends JPanel {
 
 	@Override
 	public Dimension getPreferredSize() {
-		return new Dimension(theField.getWidth()*GRID_SIZE+1, theField.getHeight()*GRID_SIZE+1);
+		return new Dimension(theField.getWidth()*GRID_SIZE, theField.getHeight()*GRID_SIZE);
 	}
 
 	public static void main(String[] args) {
