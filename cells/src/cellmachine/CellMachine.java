@@ -28,7 +28,7 @@ public class CellMachine {
 		frame.pack();
 		frame.setVisible(true);
 		
-		for ( int i=0; i<1000; i++ ) {
+		for (;;) {
 			for ( int row = 0; row<field.getHeight(); row++ ) {
 				for ( int col = 0; col<field.getWidth(); col++ ) {
 					Cell cell = field.get(row, col);
@@ -56,11 +56,11 @@ public class CellMachine {
 			}
 			System.out.println("UPDATE");
 			frame.repaint();
-			try {
-				Thread.sleep(200);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+//			try {
+//				Thread.sleep(20);
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
 		}
 	}
 
